@@ -20,19 +20,53 @@ import { Head } from '@inertiajs/vue3';
 
 
                             <div class="card bg-base-100 p-1 basis-2/6 image-full  shadow-xl">
-                                <figure>
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                                <!-- <figure>
+                                    <img src=""
                                         alt="Shoes" />
-                                </figure>
-                                <div class="card-body">
+                                </figure> -->
+                                <div class="glass rounded-md bg-primary card-body">
                                     <h2 class="card-title">Title</h2>
 
-                                    <div class="flex justify-between px-3">
+                                    <div class="flex justify-between">
                                     <p>Total:</p><p>100</p>
                                     </div>
-                                    <div class="card-actions justify-stretch">
+                                    <!-- <div class="card-actions justify-stretch">
                                         <Link class="btn w-full btn-primary">Buy Now</Link>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <div class="card bg-base-100 p-1 basis-2/6 image-full  shadow-xl">
+                                <!-- <figure>
+                                    <img src=""
+                                        alt="Shoes" />
+                                </figure> -->
+                                <div class="glass rounded-md bg-success card-body">
+                                    <h2 class="card-title">Title</h2>
+
+                                    <div class="flex justify-between">
+                                    <p>Total:</p><p>100</p>
                                     </div>
+                                    <!-- <div class="card-actions justify-stretch">
+                                        <Link class="btn w-full btn-primary">Buy Now</Link>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <div class="card bg-base-100 p-1 basis-2/6 image-full  shadow-xl">
+                                <!-- <figure>
+                                    <img src=""
+                                        alt="Shoes" />
+                                </figure> -->
+                                <div class="glass rounded-md bg-accent card-body">
+                                    <h2 class="card-title">Title</h2>
+
+                                    <div class="flex justify-between">
+                                    <p>Total:</p><p>100</p>
+                                    </div>
+                                    <!-- <div class="card-actions justify-stretch">
+                                        <Link class="btn w-full btn-primary">Buy Now</Link>
+                                    </div> -->
                                 </div>
                             </div>
 
