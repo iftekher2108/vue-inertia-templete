@@ -24,13 +24,13 @@ export default {
 
                 "neutral": "#374151",
 
-                "base-100": "#1f2937",
+                "base-100": "#304463",
 
                 "info": "#22d3ee",
 
                 "success": "#15803d",
 
-                "warning": "#eab308",
+                "warning": "#FFA823",
 
                 "error": "#dc2626",
             },

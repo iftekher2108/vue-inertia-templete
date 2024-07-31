@@ -1,81 +1,73 @@
 <script setup>
-import { computed } from 'vue';
 import { Link } from '@inertiajs/vue3';
+import NavLink from '@/Components/NavLink.vue';
 
 
-
-const props = defineProps({
-    href: {
-        type: String,
-        required: true,
-    },
-    active: {
-        type: Boolean,
-    },
-});
-
-
-const active = computed(() =>
-    props.active
-        ? 'bg-primary'
-        : 'bg-none'
-);
-
+const icon_style = "p-2 border border-1 rounded-full";
 
 </script>
 
 <template>
-    <div class="bg-neutral min-h-screen max-h-full p-2">
+    <div class="bg-neutral min-h-screen rounded-lg max-h-full p-1">
         <ul class="menu w-full rounded-box">
             <li>
-                <Link :class="active" :active="route().current('dashboard')" :href="route('dashboard')"
-                    class="p-3 text-base transition-all duration-150
-                     ease-in-out font-bold hover:bg-primary">Dashboard
-                </Link>
+                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                    <font-awesome-icon :class="icon_style" icon="fa-solid fa-house-chimney" />  Dashboard
+                </NavLink>
 
             </li>
 
             <li>
-                <Link :class="active" :href="route('profile.edit')"
-                    class="p-3 text-base font-bold transition-all
-                     duration-150 ease-in-out hover:bg-primary">Profile
-                </Link>
+                <NavLink href="">
+                    Profile
+                </NavLink>
             </li>
             <!-- <li><Link :href="route()" class="p-3 hover:bg-primary">Item 3</Link></li> -->
-            <li>
+
+            <li class="p-2">
                 <details>
-                    <summary class="p-3 text-base font-bold
-                 transition-all duration-150 ease-in-out
-                  hover:bg-primary">System settings</summary>
-                    <ul>
-                        <li><Link :href="route('settings')" class="p-3 text-base font-bold transition-all duration-150 ease-in-out hover:bg-primary">settings</Link></li>
-                        <li><Link class="p-3 text-base font-bold transition-all duration-150 ease-in-out hover:bg-primary">setting 2</Link></li>
-                    </ul>
-                </details>
+                    <summary>User setting</summary>
+            <li>
+                <NavLink :href="route('profile.edit')" :active="route().current('profile.edit')">
+                    <font-awesome-icon :class="icon_style" icon="fa-solid fa-user" />  Profile Settings
+                </NavLink>
+            </li>
+
+            </details>
+            </li>
+
+            <li class="p-2">
+                <details>
+                    <summary> System settings</summary>
+
+            <li>
+                <NavLink :href="route('settings')" :active="route().current('settings')" >settings</NavLink>
+            </li>
+            <li>
+                <NavLink href=""><font-awesome-icon icon="fa-solid fa-user-secret" /> setting 2</NavLink>
+            </li>
+
+            </details>
+            </li>
+
+            <li class="p-2">
+                <details>
+                    <summary>System settings</summary>
+
+            <li>
+                <NavLink :href="route('settings')" :active="route().current('settings')">
+                    <font-awesome-icon :class="icon_style" icon="fa-solid fa-screwdriver-wrench" />
+                     settings</NavLink>
             </li>
 
             <li>
-                <details>
-                    <summary class="p-3 text-base font-bold
-                 transition-all duration-150 ease-in-out
-                  hover:bg-primary">User setting</summary>
-                    <ul>
-                        <li><Link class="p-3 text-base font-bold transition-all duration-150 ease-in-out hover:bg-primary">Submenu 1</Link></li>
-
-                        <li>
-                            <details>
-                                <summary class="p-3 text-base font-bold
-                 transition-all duration-150 ease-in-out
-                  hover:bg-primary">sub sub menu</summary>
-                                <ul>
-                                    <li><Link class="p-3 text-base font-bold transition-all duration-150 ease-in-out hover:bg-primary">Sub sub menu 1</Link></li>
-                                    <li><Link class="p-3 text-base font-bold transition-all duration-150 ease-in-out hover:bg-primary">Sub sub menu 2</Link></li>
-                                </ul>
-                            </details>
-                        </li>
-                    </ul>
-                </details>
+                <NavLink href=""><font-awesome-icon :class="icon_style" icon="fa-solid fa-gears" /> setting 2</NavLink>
             </li>
+
+            </details>
+            </li>
+
+
         </ul>
     </div>
 </template>

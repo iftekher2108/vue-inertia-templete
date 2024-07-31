@@ -11,6 +11,7 @@ import { Link } from '@inertiajs/vue3';
 const showingNavigationDropdown = ref(false);
 
 
+
 </script>
 
 <template>
@@ -30,10 +31,8 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
-                                </NavLink>
+                            <div class="space-x-8 items-center sm:-my-px sm:ms-10 sm:flex">
+                                <slot name="header" />
                             </div>
                         </div>
 
@@ -100,19 +99,18 @@ const showingNavigationDropdown = ref(false);
             </nav>
 
             <!-- Page Heading -->
-            <header class="bg-white dark:bg-gray-800 shadow" v-if="$slots.header">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <slot name="header" />
-                </div>
-            </header>
 
-            <div class="flex flex-wrap">
-                <div class=" lg:basis-3/12 md:basis-5/12 sm:basis-12/12">
+            <div class="flex flex-wrap mt-5">
+                <div class="lg:basis-3/12 md:basis-5/12 p-2 sm:basis-12/12">
                     <sidePanel/>
                 </div>
                 <!-- Page Content -->
-                <main class="lg:basis-9/12 md:basis-7/12 sm:basis-12/12">
+                <main class="lg:basis-9/12 md:basis-7/12 p-2 sm:basis-12/12">
+
+                <div class="bg-white p-2 text-gray-900 dark:text-gray-100 rounded-lg dark:bg-gray-800 overflow-hidden">
                     <slot />
+                </div>
+
                 </main>
             </div>
 
